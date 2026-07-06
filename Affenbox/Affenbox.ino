@@ -2470,8 +2470,8 @@ void readButtons(bool invertVolumeButtons = false)
   myTrigger.volumeDown |= downButton.wasReleased();
   myTrigger.shortCutNo[0] |= buttonFour.pressedFor(LONG_PRESS);
   myTrigger.shortCutNo[1] |= buttonFive.pressedFor(LONG_PRESS);
-  myTrigger.next |= buttonFour.wasReleased() && myTriggerEnable.shortCutNo[0];
-  myTrigger.previous |= buttonFive.wasReleased() && myTriggerEnable.shortCutNo[1];
+  myTrigger.previous |= buttonFour.wasReleased() && myTriggerEnable.shortCutNo[0];
+  myTrigger.next |= buttonFive.wasReleased() && myTriggerEnable.shortCutNo[1];
   myTrigger.nextPlusTen |= myTrigger.shortCutNo[0];
   myTrigger.previousPlusTen |= myTrigger.shortCutNo[1];
   //  }
