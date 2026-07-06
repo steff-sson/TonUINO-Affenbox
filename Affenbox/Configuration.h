@@ -402,7 +402,7 @@ static const uint8_t ANALOG_INPUT_BUTTON_MAP[ANALOG_INPUT_BUTTON_COUNT + 1 ] = {
 /*
 *Aktiviert Standard Debug Asugaben
 */
-//#define DEBUG  
+#define DEBUG
 
 /*
 *Aktiviert Shortcut Debug Ausgaben
@@ -417,7 +417,7 @@ static const uint8_t ANALOG_INPUT_BUTTON_MAP[ANALOG_INPUT_BUTTON_COUNT + 1 ] = {
 /*
 *Aktiviert DFPlayer Debug Ausgaben
 */ 
-//#define DFPLAYER_PRINT
+#define DFPLAYER_PRINT
 
 /*
 *Aktiviert die Ausgabe des EEPROMS zu beginn
