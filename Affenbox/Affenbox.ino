@@ -1138,7 +1138,7 @@ class ButtonSmash : public Modifier
       knownCard = false;
       activeShortCut = -1;
 
-      mp3.setVolume(special2);
+      mp3.setVolume((special2 / 2) + 1);
       delay(100);
 
       this->Folder = special;
@@ -1723,7 +1723,7 @@ class RepeatSingleModifier : public Modifier
 
 //////////////////////////////////////////////////////////////////////////
 void SetVolume(uint8_t volume) {
-  mp3.setVolume(volume);
+  mp3.setVolume((volume / 2) + 1);
   delay(100);
 }
 
