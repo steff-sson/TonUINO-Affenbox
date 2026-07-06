@@ -2242,7 +2242,7 @@ void waitForTrackToFinish(bool interruptByTrigger /* = true */, uint16_t timeOut
 #endif
 }
 
-void waitForTrackToStart(uint16_t timeOut /* = 5000 */)
+void waitForTrackToStart(uint16_t timeOut /* = 2000 */)
 {
 #if defined DFPLAYER_PRINT
   Serial.println(F("waitForTrackToStart"));

@@ -287,7 +287,7 @@ static void previousTrack();
 bool isPlaying();
 void mp3Pause(uint16_t delayTime = 100);
 void waitForTrackToFinish (bool interruptByTrigger = true, uint16_t timeOut = 5000);
-void waitForTrackToStart(uint16_t timeOut = 5000);
+void waitForTrackToStart(uint16_t timeOut = 2000);
 void setup();
 void readButtons(bool invertVolumeButtons = false);
 #if defined IRREMOTE
