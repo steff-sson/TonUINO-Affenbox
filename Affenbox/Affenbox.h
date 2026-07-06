@@ -28,6 +28,7 @@ using ace_button::LadderButtonConfig;
 ///////// General globals ////////////////////////////////////////////////
 unsigned long sleepAtMillis = 0;
 bool standbyTimerSet = false;
+bool dfPlayerSdReady = false;
 static const uint8_t openAnalogPin = A7; //Default A7, muss ein unbelegeter, analoger Eingang sein
 //////////////////////////////////////////////////////////////////////////
 

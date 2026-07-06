@@ -102,6 +102,7 @@ class Mp3Notify
 #if defined DFPLAYER_PRINT
       PrintlnSourceAction(source, "ready");
 #endif
+      dfPlayerSdReady = true;
     }
     static void OnPlaySourceRemoved(DfMp3_PlaySources source)
     {
@@ -2310,6 +2311,21 @@ void setup()
 
   mp3.begin();
   delay(500);
+
+  // Wait for SD card to be ready (DFPlayer reports via OnPlaySourceInserted callback)
+  {
+    unsigned long sdWaitStart = millis();
+    while (!dfPlayerSdReady && millis() - sdWaitStart < 3000) {
+      mp3.loop();
+      delay(10);
+    }
+#if defined DFPLAYER_PRINT
+    if (dfPlayerSdReady)
+      Serial.println(F("SD ready after poll"));
+    else
+      Serial.println(F("SD not ready - timeout"));
+#endif
+  }
 
   // Busy Pin
   pinMode(busyPin, INPUT);
