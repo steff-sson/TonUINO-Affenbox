@@ -4557,7 +4557,7 @@ void shutDown()
   activeShortCut = -1;
   PlayMp3FolderTrack(265);
   delay(1500);
-  waitForTrackToFinish();
+  waitForTrackToFinish(false);
 
 #if defined AiO
   // verstärker aus
