@@ -1792,22 +1792,15 @@ void playFolder()
       Serial.println(myFolder->special2);
 #endif
       firstTrack = myFolder->special;
-      if (myFolder->special3 > 0)
+      if (myFolder->special3 > 0 && myFolder->special3 < myFolder->special2)
       {
-        if (myFolder->special3 < myFolder->special2)
-        {
-          currentTrack = myFolder->special3 + 1;
-        }
-        else
-        {
-          currentTrack = myFolder->special;
-        }
-        writeCardMemory(currentTrack);
+        currentTrack = myFolder->special3 + 1;
       }
       else
       {
         currentTrack = myFolder->special;
       }
+      writeCardMemory(currentTrack);
 
       break;
     case Party:
@@ -1989,10 +1982,7 @@ static void nextTrack(uint8_t track, bool force /* = false */)
       if (currentTrack < myFolder->special2)
       {
         currentTrack = currentTrack + 1;
-        if (myFolder->special3 > 0 && currentTrack != 0)
-        {
-          writeCardMemory(currentTrack);
-        }
+        writeCardMemory(currentTrack);
       }
       else
       {
@@ -2114,7 +2104,7 @@ static void previousTrack()
       if (currentTrack > firstTrack)
       {
         currentTrack = currentTrack - 1;
-        if (myFolder->special3 > 0 && currentTrack != 0)
+        if (myFolder->mode == Album_Section || (myFolder->special3 > 0 && currentTrack != 0))
         {
           writeCardMemory(currentTrack);
         }
